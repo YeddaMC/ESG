@@ -1,1 +1,118 @@
+body {
+    background-color: #F5F5DC;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* FONTE MAIS LEGÍVEL */
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+    font-size: 16px; /* TAMANHO PADRÃO DA FONTE */
+    line-height: 1.6; /* ESPAÇAMENTO ENTRE LINHAS */
+}
 
+header h1 {
+    font-size: 2.5em; /* TAMANHO RELATIVO DO TÍTULO */
+    text-align: center;
+}
+
+header h3 {
+    font-size: 1.5em; /* TAMANHO RELATIVO DO TÍTULO */
+    text-align: center;
+}
+
+header p {
+    text-align: center;
+}
+
+nav {
+    background-color: #B8BC82;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; /* LINKS E BOTÃO NAS EXTREMIDADES */
+    align-items: center; /* ALINHAMENTO VERTICAL */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none; /* OCULTAR EM TELAS GRANDES */
+}
+
+/* Estilos para tornar a navbar colapsável em telas menores */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* OCULTAR A LISTA EM TELAS PEQUENAS */
+        flex-direction: column;
+        width: 100%;
+        background-color: #B8BC82;
+        position: absolute;
+        top: 60px; /* AJUSTE CONFORME NECESSÁRIO */
+        left: 0;
+    }
+
+    nav ul.show {
+        display: flex; /* MOSTRAR A LISTA QUANDO A CLASSE 'SHOW' FOR ADICIONADA */
+    }
+
+    nav li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #menu-toggle {
+        display: block; /* MOSTRAR O BOTÃO EM TELAS PEQUENAS */
+    }
+}
+
+section {
+    background-color: #F0FFF0;
+    border: 3px solid #008000;
+    margin: 20px;
+    padding: 20px;
+}
+
+section h2 {
+    font-size: 1.8em; /* TAMANHO RELATIVO DO TÍTULO DA SEÇÃO */
+section h3 {
+    font-size: 1.8em; /* TAMANHO RELATIVO DO TÍTULO DA SEÇÃO */
+}
+  
+section p {
+    font-size: 1em; /* TAMANHO RELATIVO DO TEXTO DA SEÇÃO */
+}
+
+#topo {
+    position: fixed; /* TORNA O ELEMENTO FIXO NA TELA */
+    bottom: 20px; /* DISTÂNCIA DA PARTE INFERIOR DA TELA */
+    right: 20px; /* DISTÂNCIA DA PARTE DIREITA DA TELA */
+    background-color: #008000;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: none; /* INICIALMENTE OCULTO */
+    z-index: 1000; /* GARANTE QUE O BOTÃO FIQUE ACIMA DE OUTROS ELEMENTOS */
+}
+
+#topo:hover {
+    background-color: #006400;
+}

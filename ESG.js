@@ -1,20 +1,21 @@
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("topo").style.display = "block";
-    } else {
-        document.getElementById("topo").style.display = "none";
-    }
-}
-
-document.getElementById("topo").addEventListener("click", function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+document.querySelectorAll('.topo').forEach(button => {
+    button.addEventListener("click", function() {
+        window.scrollTo({ 
+            top: 0, 
+            behavior: "smooth" 
+        });
     });
 });
 
+
 document.getElementById('menu-toggle').addEventListener('click', function() {
-    document.getElementById('menu').classList.toggle('show');
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('show'); // Alterna a classe 'show' para exibir ou ocultar o menu
+});
+
+
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.getElementById('menu').classList.remove('show');
+    });
 });

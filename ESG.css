@@ -158,4 +158,28 @@ h4 {
 
   
   
+  nav {
+    background-color: black; /* Fundo preto */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Menu fixo no topo */
+    top: 0;
+    width: 100%; /* Ajuste para ocupar toda a largura */
+    box-sizing: border-box; /* Incluir bordas na largura total */
+}
+
   
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; /* Distribuir itens uniformemente */
+}
+
+nav li {
+    margin: 0 10px; /* Ajustar espaçamento entre itens */
+}
+

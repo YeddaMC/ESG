@@ -1,20 +1,17 @@
+/* Estilos Gerais */
 body {
     background-color: #F5F5DC;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* FONTE MAIS LEGÍVEL */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 20px;
-    font-size: 16px; /* TAMANHO PADRÃO DA FONTE */
-    line-height: 1.6; /* ESPAÇAMENTO ENTRE LINHAS */
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-header h1 {
-    font-size: 2.5em; /* TAMANHO RELATIVO DO TÍTULO */
-    text-align: center;
-}
-
-header h3 {
-    font-size: 1.5em; /* TAMANHO RELATIVO DO TÍTULO */
+/* Header */
+header h1, header h3 {
+    font-size: inherit;
     text-align: center;
 }
 
@@ -22,12 +19,15 @@ header p {
     text-align: center;
 }
 
+/* Navbar */
 nav {
-    background-color: #B8BC82;
+    background-color: black; /* Fundo preto */
     padding: 15px;
     display: flex;
-    justify-content: space-between; /* LINKS E BOTÃO NAS EXTREMIDADES */
-    align-items: center; /* ALINHAMENTO VERTICAL */
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Menu fixo no topo */
+    top: 0;
 }
 
 nav ul {
@@ -42,77 +42,120 @@ nav li {
 }
 
 nav a {
-    color: white;
+    color: white; /* Cor branca para o texto do menu */
     text-decoration: none;
 }
 
 #menu-toggle {
     background: none;
     border: none;
-    color: white;
+    color: white; /* Cor branca para o ícone do botão */
     font-size: 1.5em;
     cursor: pointer;
-    display: none; /* OCULTAR EM TELAS GRANDES */
+    display: none; /* Ocultar em telas grandes */
 }
 
-/* Estilos para tornar a navbar colapsável em telas menores */
+/* Estilos para Telas Menores */
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* OCULTAR A LISTA EM TELAS PEQUENAS */
-        flex-direction: column;
-        width: 100%;
-        background-color: #B8BC82;
-        position: absolute;
-        top: 60px; /* AJUSTE CONFORME NECESSÁRIO */
-        left: 0;
+        display: none; /* Ocultar por padrão */
+        flex-direction: column; /* Exibir itens em coluna */
+        width: 100%; /* Ocupar toda a largura da tela */
+        background-color: black; /* Fundo preto para o menu expandido */
+        position: absolute; /* Tornar o menu flutuante */
+        top: 60px; /* Ajustar a posição abaixo do botão de alternância */
+        left: 0; /* Alinhar à esquerda */
+        z-index: 1000; /* Garantir que fique acima de outros elementos */
     }
 
     nav ul.show {
-        display: flex; /* MOSTRAR A LISTA QUANDO A CLASSE 'SHOW' FOR ADICIONADA */
+        display: block; /* Mostrar o menu quando expandido */
+        flex-direction: column; /* Exibir itens em coluna */
+        text-align: center; /* Centralizar os itens do menu */
     }
 
     nav li {
-        margin: 10px 0;
+        margin: 10px 0; /* Espaçamento vertical entre os itens do menu */
         text-align: center;
     }
 
+    nav a {
+        color: white; /* Garantir que o texto permaneça branco no menu expandido */
+        font-size: 1.2em; /* Ajustar tamanho da fonte para melhor legibilidade em telas menores */
+    }
+
     #menu-toggle {
-        display: block; /* MOSTRAR O BOTÃO EM TELAS PEQUENAS */
+        display: block; /* Mostrar o botão em telas pequenas */
     }
 }
 
+/* Seções */
 section {
     background-color: #F0FFF0;
     border: 3px solid #008000;
-    margin: 20px;
-    padding: 20px;
+    margin: 5% auto; /* Margens ajustáveis para centralizar horizontalmente */
+    padding: 5%; /* Espaçamento interno proporcional */
+    max-width: 90%; /* Limitar largura a 90% da tela */
+    box-sizing: border-box; /* Garantir que bordas sejam incluídas na largura total */
 }
 
-section h2 {
-    font-size: 1.8em; /* TAMANHO RELATIVO DO TÍTULO DA SEÇÃO */
-section h3 {
-    font-size: 1.8em; /* TAMANHO RELATIVO DO TÍTULO DA SEÇÃO */
+section h2, section h3, section h4 { 
+    font-size: inherit; 
+    text-align: center; /* Centralizar todos os títulos dentro das seções */ 
+}
+
+section p {
+    font-size: 1em;
+}
+
+/* Ajustes para Telas Menores */
+@media (max-width: 768px) {
+    section {
+        font-size: 0.9em; 
+        padding: 3%;
+        max-width: calc(100% - 40px); /* Ajustar largura para evitar ultrapassar as bordas da tela menor */
+        margin-left:auto; 
+        margin-right:auto;
+
+}
+}
+
+/* Ajustes para Telas Maiores */
+@media (min-width: 768px) {
+   section {max-width :120;}
+h1 {
+    font-size: 2.5em; /* Tamanho para h1 */
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em; /* Tamanho para h2 */
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.8em; /* Tamanho para h3 */
+    text-align: center;
+}
+
+h4 {
+    font-size: 1.5em; /* Tamanho para h4 */
+    text-align: center;
+}
+
+  
+  
+  
+  body {
+    margin: 0; /* Remover margens do corpo */
 }
   
-section p {
-    font-size: 1em; /* TAMANHO RELATIVO DO TEXTO DA SEÇÃO */
+  body {
+    font-size: 24px; /* Aumentar tamanho da fonte padrão */
 }
 
-#topo {
-    position: fixed; /* TORNA O ELEMENTO FIXO NA TELA */
-    bottom: 20px; /* DISTÂNCIA DA PARTE INFERIOR DA TELA */
-    right: 20px; /* DISTÂNCIA DA PARTE DIREITA DA TELA */
-    background-color: #008000;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    display: none; /* INICIALMENTE OCULTO */
-    z-index: 1000; /* GARANTE QUE O BOTÃO FIQUE ACIMA DE OUTROS ELEMENTOS */
-}
 
-#topo:hover {
-    background-color: #006400;
-}
+
+  
+  
+  
